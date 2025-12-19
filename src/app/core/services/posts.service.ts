@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { PagedResult } from '../models/PagedResult.model';
-import  { PostDto } from '../models/post.model';
+import { PostDto } from '../models/post.model';
 
 
 @Injectable({ providedIn: 'root' })
@@ -30,6 +30,7 @@ export class PostsService {
       .set('page', page.toString())
       .set('pageSize', pageSize.toString());
     return this.http.get<PagedResult<PostDto>>(`${this.baseUrl}/GetPostPaged`, { params });
+    
   }
 
   getPostByTag(tag: string): Observable<any> {
@@ -84,5 +85,7 @@ export class PostsService {
     return this.http.post<any>(`${this.baseUrl}/AddTagTopost`, payload);
   }
 }
+
+
 
 

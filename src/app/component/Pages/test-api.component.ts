@@ -1,6 +1,6 @@
 import { Component, ChangeDetectorRef, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { PostsService } from '../core/services/posts.service';
+import { PostsService } from '../../core/services/posts.service';
 
 @Component({
   selector: 'app-test-api',
@@ -23,11 +23,13 @@ import { PostsService } from '../core/services/posts.service';
 
         <div class="posts-container">
         <h4>📋 Recent Posts ({{ posts.length }}):</h4>
-        <div *ngFor="let post of posts; let i = index" class="post-item">
-          <h5>#{{ i + 1 }}: {{ post.title }}</h5>
-          <p>{{ post.content }}</p>
-          <small>Created: {{ post.createdAt | date:'medium' }}</small>
+      @for (item of posts; track $index) {
+          <div  class="post-item">
+          <h5>#{{ $index + 1 }}: {{ item.title }}</h5>
+          <p>{{ item.content }}</p>
+          <small>Created: {{ item.createdAt | date:'medium' }}</small>
         </div>
+      }
       </div>
     }
       

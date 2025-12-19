@@ -1,6 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
-
 @import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui" {
+	themes: false;
+}
+
+@plugin "daisyui/theme" {
+	name: "clint";
+	default: false;
+	prefersdark: false;
+	color-scheme: "light";
+	--color-base-100: oklch(98% 0 0);
+	--color-base-200: oklch(96% 0.001 286.375);
+	--color-base-300: oklch(92% 0.004 286.32);
+	--color-base-content: oklch(21% 0.006 285.885);
+	--color-primary: oklch(70% 0.015 286.067);
+	--color-primary-content: oklch(14% 0.005 285.823);
+	--color-secondary: oklch(70% 0.191 22.216);
+	--color-secondary-content: oklch(25% 0.092 26.042);
+	--color-accent: oklch(71% 0.194 13.428);
+	--color-accent-content: oklch(27% 0.105 12.094);
+	--color-neutral: oklch(21% 0.006 285.885);
+	--color-neutral-content: oklch(98% 0 0);
+	--color-info: oklch(78% 0.154 211.53);
+	--color-info-content: oklch(30% 0.056 229.695);
+	--color-success: oklch(79% 0.209 151.711);
+	--color-success-content: oklch(26% 0.065 152.934);
+	--color-warning: oklch(82% 0.189 84.429);
+	--color-warning-content: oklch(27% 0.077 45.635);
+	--color-error: oklch(71% 0.194 13.428);
+	--color-error-content: oklch(27% 0.105 12.094);
+	--radius-selector: 2rem;
+	--radius-field: 0.25rem;
+	--radius-box: 0rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+	--border: 1px;
+	--depth: 1;
+	--noise: 1;
+}
+
+
+
 
 
 .test-container {
@@ -12,7 +54,7 @@
     }
     button {
       padding: 10px 20px;
-      background: #007bff;
+      background: #2d3136;
       color: white;
       border: none;
       border-radius: 4px;
@@ -78,3 +120,107 @@
       overflow-y: auto;
 }
   
+
+
+
+
+   .layout {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: #1e293b;
+      color: white;
+      padding: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .logo:hover {
+      opacity: 0.8;
+    }
+
+    .logo h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-menu li a {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .nav-menu li a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .nav-menu li a.active {
+      background: #3b82f6;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn-login {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-login:hover {
+      background: #2563eb;
+    }
+
+    .main-content {
+      flex: 1;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .footer {
+      background: #f1f5f9;
+      padding: 2rem;
+      text-align: center;
+      justify-content: center;
+      margin-top: auto;
+    }
+
+    .footer p {
+      margin: 0;
+      color: #64748b;
+    }
