@@ -1,12 +1,23 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { TestApiComponent } from "./component/test-api/test-api.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [CommonModule, TestApiComponent],
+  template: `
+    <div class="container">
+      <h1>Blog API Testing</h1>
+      <app-test-api></app-test-api>
+    </div>
+  `,
+  styles: [`
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+  `]
 })
-export class App {
-  protected readonly title = signal('BlogUI');
-}
+export class AppComponent {}
