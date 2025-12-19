@@ -1,0 +1,24 @@
+# Set default behavior to normalize line endings
+* text=auto
+
+# Treat JavaScript/TypeScript as text
+*.ts text
+*.js text
+*.json text
+*.html text
+*.css text
+*.scss text
+
+# Handle images as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+
+# Ignore node_modules from diff/merge (optional)
+node_modules/* -text
+
+# Handle shell scripts
+*.sh text eol=lf
